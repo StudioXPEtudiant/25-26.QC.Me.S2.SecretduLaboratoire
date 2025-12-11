@@ -18,5 +18,8 @@ mesh = SubResource("CapsuleMesh_mpqn7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("ConvexPolygonShape3D_sfy3h")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.657261, 0.157012)
+[node name="Neck" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(0.809134, 0, 0, 0, 0.814968, 0, 0, 0, 1.1695, -0.0837116, 0.651485, -0.0403786)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck"]
+transform = Transform3D(1.23589, 0, 0, 0, 1.22704, 0, 0, 0, 0.855067, 0.103458, 0.00708699, 0.168782)
