@@ -9,11 +9,21 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $neck
 @onready var camera := $Neck/Camera3D
 
-func _unhandled_input(envent):
-	if envent is InputEventMouseButton:
-		Input.set.mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	elif event.is.action.pressed("ui_cancel"):
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			neck.rotate_y(-event.relative.x * 0.01)
+			camera.rotate_x(-event.relative.y * 0.01)
+			#camera.rotation.x = clamp(camera.rotation.x, deg2rad(-30), deg2rad(60))
+
+
+
 
 func _physics_process(delta):
 	# Add the gravity.
