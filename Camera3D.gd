@@ -2,7 +2,7 @@ extends Camera3D
 
 @export var cameraSpeed=1.5
 
-#called when the node enters the scene tree for the first time.
+#Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
@@ -10,11 +10,11 @@ func _ready():
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("forward"):
-		position.x-=cameraSpeeddelta
+		position.x-=cameraSpeed*delta
 	if Input.is_action_pressed("back"):
-		position.x+=cameraSpeeddelta
+		position.x+=cameraSpeed*delta
 	if Input.is_action_pressed("left"):
-		position.z+=cameraSpeeddelta
+		position.z+=cameraSpeed*delta
 	if Input.is_action_pressed("right"):
-		position.z-=cameraSpeeddelta
+		position.z-=cameraSpeed*delta
 	pass
