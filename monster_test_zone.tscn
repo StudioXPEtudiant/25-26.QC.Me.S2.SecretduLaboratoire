@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ft0pb6mux63p"]
+
+[ext_resource type="PackedScene" uid="uid://bma6higysv4xa" path="res://node_3d.tscn" id="1_qlf8k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wtvyg"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ors04"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_g4onx"]
+
+[node name="monster test zone" type="Node3D"]
+
+[node name="sol" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_wtvyg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="sol"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sol/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ors04")
+
+[node name="monstre" parent="." instance=ExtResource("1_qlf8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010502, 0.195404, 0.0153247)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010502, 0.195404, 0.0153247)
+navigation_mesh = SubResource("NavigationMesh_g4onx")
