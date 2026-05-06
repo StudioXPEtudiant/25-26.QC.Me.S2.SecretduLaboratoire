@@ -1,0 +1,185 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk0dbhehdbnvh"]
+
+[ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
+[ext_resource type="PackedScene" uid="uid://0uq3bajnnkxf" path="res://monstre.tscn" id="2_exvro"]
+
+[sub_resource type="TextMesh" id="TextMesh_tnb5y"]
+text = "CREDIT TO :
+OLIVIER LAFLAMME
+Aude
+Raphael
+Thaiana
+Maeline"
+
+[sub_resource type="TextMesh" id="TextMesh_28njg"]
+text = "CRÉDIT À OLIVIER LAFLAMME 🔥😜🔥:
+À créer ce jeu à 13 ans avec les cours de Studio XP
+
+LISTE DES CONTRIBUTIONS :
+-À créer le menus principal.
+-Créer le crédit que tu lis en ce moment même😜.
+-ET PLUS...
+"
+
+[sub_resource type="TextMesh" id="TextMesh_04hxp"]
+text = "CÉRDIT À AUDE⚡🤦‍♂️⚡:
+À CRÉER CE JEU À L'AGE DE ## AVEC STUDIO XP
+
+LISTE DES CONTRIBUTIONS :
+-À CRÉER LE TITRE POUR LE MENU PRINCIPAL
+-A FAIT LES CONCEPTS DE L'ART DU JEU
+-A FAIT LES GRAPHIQUES DU JEU"
+
+[node name="UI SETTING" type="Node2D"]
+
+[node name="PLAY STORY MODE" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 389.0
+offset_top = 14.0
+offset_right = 778.0
+offset_bottom = 112.0
+action_mode = 0
+text = "Histoire"
+script = ExtResource("1_lv2l4")
+metadata/_edit_use_anchors_ = true
+
+[node name="PLAY NORMAL MODE" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 389.0
+offset_top = 118.0
+offset_right = 778.0
+offset_bottom = 216.0
+action_mode = 0
+text = "Jeu libre"
+metadata/_edit_use_anchors_ = true
+
+[node name="SETTING" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 389.0
+offset_top = 222.0
+offset_right = 778.0
+offset_bottom = 320.0
+action_mode = 0
+text = "Paramètres"
+metadata/_edit_use_anchors_ = true
+
+[node name="INVENTORY" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 389.0
+offset_top = 327.0
+offset_right = 778.0
+offset_bottom = 425.0
+action_mode = 0
+text = "Quitte immédiatement!"
+metadata/_edit_use_anchors_ = true
+
+[node name="REWATCH" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 389.0
+offset_top = 430.0
+offset_right = 778.0
+offset_bottom = 528.0
+action_mode = 0
+text = "بالتأكيد ليس بيضة عيد الفصح"
+metadata/_edit_use_anchors_ = true
+
+[node name="CREDIT" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 389.0
+offset_top = 535.0
+offset_right = 778.0
+offset_bottom = 633.0
+action_mode = 0
+text = "Crédit
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Multi credit text" type="MeshInstance2D" parent="."]
+position = Vector2(563.973, 329.407)
+scale = Vector2(686.622, -516.518)
+mesh = SubResource("TextMesh_tnb5y")
+
+[node name="OLIVIER_LAFLAMME_CREDIT_BUTTON" type="Button" parent="."]
+offset_left = -7.0
+offset_top = 96.0
+offset_right = 1152.0
+offset_bottom = 219.0
+disabled = true
+action_mode = 0
+
+[node name="AUDE_CREDIT_BUTTON" type="Button" parent="."]
+offset_left = -5.0
+offset_top = 220.0
+offset_right = 1136.0
+offset_bottom = 346.0
+disabled = true
+action_mode = 0
+
+[node name="<--BACK" type="Button" parent="."]
+offset_right = 69.0
+offset_bottom = 31.0
+action_mode = 0
+text = "<--BACK
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="olivier" type="MeshInstance2D" parent="."]
+visible = false
+modulate = Color(0, 1, 1, 1)
+position = Vector2(571, 326.936)
+scale = Vector2(256.552, -240.649)
+mesh = SubResource("TextMesh_28njg")
+
+[node name="Icon2" parent="." instance=ExtResource("2_exvro")]
+show_behind_parent = true
+position = Vector2(572.5, 312.5)
+scale = Vector2(10.0234, 5.60156)
+
+[node name="Aude" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(578, 218.076)
+scale = Vector2(280.31, -239.792)
+mesh = SubResource("TextMesh_04hxp")
+
+[connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="PLAY NORMAL MODE" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="PLAY NORMAL MODE" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="SETTING" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="SETTING" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="INVENTORY" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="INVENTORY" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="REWATCH" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="REWATCH" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="CREDIT" method="set_visible" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="CREDIT" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="Multi credit text" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Aude" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="PLAY STORY MODE" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="PLAY STORY MODE" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="PLAY NORMAL MODE" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="PLAY NORMAL MODE" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="SETTING" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="SETTING" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="INVENTORY" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="INVENTORY" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="REWATCH" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="REWATCH" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="CREDIT" method="set_visible" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="CREDIT" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="Multi credit text" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="olivier" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="Aude" method="set_visible" binds= [false]]
