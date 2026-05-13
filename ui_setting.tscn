@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk0dbhehdbnvh"]
+[gd_scene load_steps=6 format=3 uid="uid://bk0dbhehdbnvh"]
 
 [ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
 
@@ -29,59 +29,62 @@ LISTE DES CONTRIBUTIONS :
 -A FAIT LES CONCEPTS DE L'ART DU JEU
 -A FAIT LES GRAPHIQUES DU JEU"
 
+[sub_resource type="TextMesh" id="TextMesh_thgmg"]
+text = "???"
+
 [node name="UI SETTING" type="Node2D"]
 
 [node name="PLAY STORY MODE" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 389.0
-offset_top = 14.0
-offset_right = 778.0
-offset_bottom = 112.0
+offset_left = -4.0
+offset_top = 541.0
+offset_right = 385.0
+offset_bottom = 639.0
 action_mode = 0
 text = "Histoire"
 script = ExtResource("1_lv2l4")
 metadata/_edit_use_anchors_ = true
 
 [node name="PLAY NORMAL MODE" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 389.0
-offset_top = 118.0
-offset_right = 778.0
-offset_bottom = 216.0
+offset_left = 763.0
+offset_top = 547.0
+offset_right = 1152.0
+offset_bottom = 645.0
 action_mode = 0
 text = "Jeu libre"
 metadata/_edit_use_anchors_ = true
 
 [node name="SETTING" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 389.0
-offset_top = 222.0
-offset_right = 778.0
-offset_bottom = 320.0
+offset_left = 768.0
+offset_top = 269.0
+offset_right = 1157.0
+offset_bottom = 367.0
 action_mode = 0
 text = "Paramètres"
 metadata/_edit_use_anchors_ = true
 
 [node name="INVENTORY" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 389.0
-offset_top = 327.0
-offset_right = 778.0
-offset_bottom = 425.0
+offset_top = 268.0
+offset_right = 389.0
+offset_bottom = 366.0
 action_mode = 0
 text = "Quitte immédiatement!"
 metadata/_edit_use_anchors_ = true
 
 [node name="REWATCH" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 389.0
-offset_top = 430.0
-offset_right = 778.0
-offset_bottom = 528.0
+offset_left = 79.0
+offset_top = 643.0
+offset_right = 279.0
+offset_bottom = 674.0
+scale = Vector2(0.1, 0.1)
 action_mode = 0
 text = "بالتأكيد ليس بيضة عيد الفصح"
 metadata/_edit_use_anchors_ = true
 
 [node name="CREDIT" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 389.0
-offset_top = 535.0
-offset_right = 778.0
-offset_bottom = 633.0
+offset_left = 385.0
+offset_top = 269.0
+offset_right = 774.0
+offset_bottom = 367.0
 action_mode = 0
 text = "Crédit
 "
@@ -159,6 +162,20 @@ position = Vector2(578, 218.076)
 scale = Vector2(280.31, -239.792)
 mesh = SubResource("TextMesh_04hxp")
 
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_right = 1156.0
+offset_bottom = 647.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(585.208, 298.214)
+scale = Vector2(2420.92, -5312.98)
+mesh = SubResource("TextMesh_thgmg")
+
+[connection signal="pressed" from="REWATCH" to="Button" method="set_visible" binds= [true]]
+[connection signal="pressed" from="REWATCH" to="Button" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="REWATCH" to="MeshInstance2D" method="set_visible" binds= [true]]
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_visible" binds= [false]]
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="CREDIT" to="PLAY NORMAL MODE" method="set_visible" binds= [false]]
@@ -246,3 +263,6 @@ mesh = SubResource("TextMesh_04hxp")
 [connection signal="pressed" from="<--BACK" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Button" to="Button" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="Button" to="MeshInstance2D" method="set_visible" binds= [false]]
