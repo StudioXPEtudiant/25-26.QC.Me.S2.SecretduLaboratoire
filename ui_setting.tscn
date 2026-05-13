@@ -54,17 +54,18 @@ text = "Jeu libre"
 metadata/_edit_use_anchors_ = true
 
 [node name="SETTING" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 768.0
-offset_top = 269.0
-offset_right = 1157.0
-offset_bottom = 367.0
+offset_left = 775.0
+offset_top = 268.0
+offset_right = 1164.0
+offset_bottom = 366.0
 action_mode = 0
 text = "Paramètres"
 metadata/_edit_use_anchors_ = true
 
 [node name="INVENTORY" type="Button" parent="." groups=["normal setting ui button"]]
+offset_left = 387.0
 offset_top = 268.0
-offset_right = 389.0
+offset_right = 776.0
 offset_bottom = 366.0
 action_mode = 0
 text = "Quitte immédiatement!"
@@ -81,10 +82,10 @@ text = "بالتأكيد ليس بيضة عيد الفصح"
 metadata/_edit_use_anchors_ = true
 
 [node name="CREDIT" type="Button" parent="." groups=["normal setting ui button"]]
-offset_left = 385.0
-offset_top = 269.0
-offset_right = 774.0
-offset_bottom = 367.0
+offset_left = 1.0
+offset_top = 268.0
+offset_right = 390.0
+offset_bottom = 366.0
 action_mode = 0
 text = "Crédit
 "

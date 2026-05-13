@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc3happqrgv0i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nahpw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hs3d4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_chcbm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mtpsi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.295867, 0.295866, 0.295866, 1)
+position = Vector2(357, 398)
+scale = Vector2(243.526, 356.75)
+mesh = SubResource("SphereMesh_nahpw")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(357, 369)
+scale = Vector2(243.526, 118.188)
+mesh = SubResource("SphereMesh_nahpw")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+position = Vector2(360, 370)
+scale = Vector2(75.4603, 101.75)
+mesh = SubResource("SphereMesh_hs3d4")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0.341176, 0.113725)
+position = Vector2(359, 371.423)
+scale = Vector2(16.0752, 104.846)
+mesh = SubResource("SphereMesh_chcbm")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="."]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+position = Vector2(271, 546)
+rotation = 0.496215
+scale = Vector2(89.5, 133.5)
+mesh = SubResource("BoxMesh_mtpsi")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="."]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+position = Vector2(238.551, 643.073)
+rotation = 0.132071
+scale = Vector2(88.3873, 133.5)
+mesh = SubResource("BoxMesh_mtpsi")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="."]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+position = Vector2(442, 565)
+rotation = -0.47213
+scale = Vector2(89.5, 105.637)
+mesh = SubResource("BoxMesh_mtpsi")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="."]
+modulate = Color(0.298039, 0.298039, 0.298039, 1)
+position = Vector2(461.088, 660.827)
+rotation = -0.00740552
+scale = Vector2(89.5, 151.739)
+mesh = SubResource("BoxMesh_mtpsi")
