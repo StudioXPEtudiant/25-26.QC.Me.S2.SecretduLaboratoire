@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk0dbhehdbnvh"]
+[gd_scene load_steps=5 format=3 uid="uid://bk0dbhehdbnvh"]
 
 [ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
-[ext_resource type="PackedScene" uid="uid://0uq3bajnnkxf" path="res://monstre.tscn" id="2_exvro"]
 
 [sub_resource type="TextMesh" id="TextMesh_tnb5y"]
 text = "CREDIT TO :
@@ -89,11 +88,13 @@ text = "Crédit
 metadata/_edit_use_anchors_ = true
 
 [node name="Multi credit text" type="MeshInstance2D" parent="."]
+visible = false
 position = Vector2(563.973, 329.407)
 scale = Vector2(686.622, -516.518)
 mesh = SubResource("TextMesh_tnb5y")
 
 [node name="OLIVIER_LAFLAMME_CREDIT_BUTTON" type="Button" parent="."]
+visible = false
 offset_left = -7.0
 offset_top = 96.0
 offset_right = 1152.0
@@ -102,10 +103,38 @@ disabled = true
 action_mode = 0
 
 [node name="AUDE_CREDIT_BUTTON" type="Button" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = 220.0
 offset_right = 1136.0
 offset_bottom = 328.0
+disabled = true
+action_mode = 0
+
+[node name="RAPHAEL_CREDIT_BUTTON2" type="Button" parent="."]
+visible = false
+offset_left = -7.0
+offset_top = 335.0
+offset_right = 1152.0
+offset_bottom = 458.0
+disabled = true
+action_mode = 0
+
+[node name="THAIANA_CREDIT_BUTTON" type="Button" parent="."]
+visible = false
+offset_left = -7.0
+offset_top = 462.0
+offset_right = 1152.0
+offset_bottom = 557.0
+disabled = true
+action_mode = 0
+
+[node name="MAELINE_CREDIT_BUTTON" type="Button" parent="."]
+visible = false
+offset_left = -15.0
+offset_top = 565.0
+offset_right = 1144.0
+offset_bottom = 688.0
 disabled = true
 action_mode = 0
 
@@ -124,40 +153,11 @@ position = Vector2(571, 326.936)
 scale = Vector2(256.552, -240.649)
 mesh = SubResource("TextMesh_28njg")
 
-[node name="Icon2" parent="." instance=ExtResource("2_exvro")]
-show_behind_parent = true
-position = Vector2(572.5, 312.5)
-scale = Vector2(10.0234, 5.60156)
-
 [node name="Aude" type="MeshInstance2D" parent="."]
 visible = false
 position = Vector2(578, 218.076)
 scale = Vector2(280.31, -239.792)
 mesh = SubResource("TextMesh_04hxp")
-
-[node name="RAPHAEL_CREDIT_BUTTON2" type="Button" parent="."]
-offset_left = -7.0
-offset_top = 335.0
-offset_right = 1152.0
-offset_bottom = 458.0
-disabled = true
-action_mode = 0
-
-[node name="THAIANA_CREDIT_BUTTON" type="Button" parent="."]
-offset_left = -7.0
-offset_top = 462.0
-offset_right = 1152.0
-offset_bottom = 557.0
-disabled = true
-action_mode = 0
-
-[node name="MAELINE_CREDIT_BUTTON" type="Button" parent="."]
-offset_left = -15.0
-offset_top = 565.0
-offset_right = 1144.0
-offset_bottom = 688.0
-disabled = true
-action_mode = 0
 
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_visible" binds= [false]]
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_disabled" binds= [true]]
@@ -176,18 +176,54 @@ action_mode = 0
 [connection signal="pressed" from="CREDIT" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="CREDIT" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [true]]
 [connection signal="pressed" from="CREDIT" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [false]]
+[connection signal="pressed" from="CREDIT" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CREDIT" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Aude" method="set_visible" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="Multi credit text" method="set_visible" binds= [false]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="olivier" method="set_visible" binds= [true]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="PLAY STORY MODE" method="set_visible" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="PLAY STORY MODE" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="PLAY NORMAL MODE" method="set_visible" binds= [true]]
@@ -207,21 +243,9 @@ action_mode = 0
 [connection signal="pressed" from="<--BACK" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="olivier" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="Aude" method="set_visible" binds= [false]]
-[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="Multi credit text" method="set_visible" binds= [false]]
-[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
-[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="olivier" method="set_visible" binds= [true]]
-[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
-[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
-[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
-[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
-[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
-[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
-[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
-[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
-[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
-[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
