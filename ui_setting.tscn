@@ -123,6 +123,8 @@ offset_right = 1152.0
 offset_bottom = 458.0
 disabled = true
 action_mode = 0
+text = "(a enlever)
+rapahel est le permier créateur d'hISTOIRE"
 
 [node name="THAIANA_CREDIT_BUTTON" type="Button" parent="."]
 visible = false
@@ -141,6 +143,8 @@ offset_right = 1144.0
 offset_bottom = 688.0
 disabled = true
 action_mode = 0
+text = "(a enlever)
+maeline est la deuxiem créatrice d'hISTOIRE"
 
 [node name="<--BACK" type="Button" parent="."]
 offset_right = 69.0
