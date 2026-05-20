@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk0dbhehdbnvh"]
+[gd_scene load_steps=7 format=3 uid="uid://bk0dbhehdbnvh"]
 
 [ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
 
@@ -15,7 +15,7 @@ text = "CRÉDIT À OLIVIER LAFLAMME 🔥😜🔥:
 À créer ce jeu à 13 ans avec les cours de Studio XP
 
 LISTE DES CONTRIBUTIONS :
--À créer le menus principal.
+-À créer le menu principal.
 -Créer le crédit que tu lis en ce moment même😜.
 -ET PLUS...
 "
@@ -28,6 +28,28 @@ LISTE DES CONTRIBUTIONS :
 -À CRÉER LE TITRE POUR LE MENU PRINCIPAL
 -A FAIT LES CONCEPTS DE L'ART DU JEU
 -A FAIT LES GRAPHIQUES DU JEU"
+
+[sub_resource type="TextMesh" id="TextMesh_ntxfx"]
+text = "CRÉDIT À Raphaelle 
+Bérubé🕵🎮🌌 :
+À créer ce jeu à ## ans avec les cours de Studio XP
+
+LISTE DES CONTRIBUTIONS :
+-A créer un partie de l'histoire.
+-Playtester
+-Superviseur
+-Rien
+-ET PLUS...
+
+
+
+
+
+
+
+
+
+C'était un test de voir si tu regarde vraiment les choses envoyés dans git pour voir si tu supervise bien."
 
 [sub_resource type="TextMesh" id="TextMesh_thgmg"]
 text = "???"
@@ -123,8 +145,6 @@ offset_right = 1152.0
 offset_bottom = 458.0
 disabled = true
 action_mode = 0
-text = "(a enlever)
-rapahel est le permier créateur d'hISTOIRE"
 
 [node name="THAIANA_CREDIT_BUTTON" type="Button" parent="."]
 visible = false
@@ -166,6 +186,12 @@ visible = false
 position = Vector2(578, 218.076)
 scale = Vector2(280.31, -239.792)
 mesh = SubResource("TextMesh_04hxp")
+
+[node name="RAPAHEL" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(601, 636)
+scale = Vector2(262.349, -275.212)
+mesh = SubResource("TextMesh_ntxfx")
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -209,25 +235,25 @@ mesh = SubResource("TextMesh_thgmg")
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="OLIVIER_LAFLAMME_CREDIT_BUTTON" to="olivier" method="set_visible" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Aude" method="set_visible" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="AUDE_CREDIT_BUTTON" to="Aude" method="set_visible" binds= [true]]
 [connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="Multi credit text" method="set_visible" binds= [false]]
 [connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
@@ -239,6 +265,7 @@ mesh = SubResource("TextMesh_thgmg")
 [connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="RAPHAEL_CREDIT_BUTTON2" to="RAPAHEL" method="set_visible" binds= [true]]
 [connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
 [connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
@@ -278,14 +305,15 @@ mesh = SubResource("TextMesh_thgmg")
 [connection signal="pressed" from="<--BACK" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="AUDE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="AUDE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="<--BACK" to="olivier" method="set_visible" binds= [false]]
-[connection signal="pressed" from="<--BACK" to="Aude" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="RAPHAEL_CREDIT_BUTTON2" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="RAPHAEL_CREDIT_BUTTON2" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="THAIANA_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="<--BACK" to="olivier" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="Aude" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="RAPAHEL" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button" to="Button" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="Button" to="MeshInstance2D" method="set_visible" binds= [false]]
