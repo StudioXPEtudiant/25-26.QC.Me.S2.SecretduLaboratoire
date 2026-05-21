@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bk0dbhehdbnvh"]
+[gd_scene load_steps=9 format=3 uid="uid://bk0dbhehdbnvh"]
 
 [ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
 
@@ -51,8 +51,29 @@ LISTE DES CONTRIBUTIONS :
 
 C'était un test de voir si tu regarde vraiment les choses envoyés dans git pour voir si tu supervise bien."
 
-[sub_resource type="TextMesh" id="TextMesh_thgmg"]
-text = "???"
+[sub_resource type="TextMesh" id="TextMesh_q1r0n"]
+text = "CRÉDIT À Thaiana:
+À créer ce jeu à ## ans avec les cours de Studio XP
+
+LISTE DES CONTRIBUTIONS :
+-Regarde les liens.
+-A fait de la musique.
+-A fait les bruitages
+-ET PLUS...
+"
+
+[sub_resource type="TextMesh" id="TextMesh_sptri"]
+text = "CRÉDIT À Maeline:
+À créer ce jeu à ## ans avec les cours de Studio XP
+
+LISTE DES CONTRIBUTIONS :
+-A créer la deuxième partie de l'histoire.
+-A créer les designs.
+-A créer le concept des designs.
+-ET PLUS...
+"
+
+[sub_resource type="TextMesh" id="TextMesh_j0d2j"]
 
 [node name="UI SETTING" type="Node2D"]
 
@@ -193,20 +214,28 @@ position = Vector2(601, 636)
 scale = Vector2(262.349, -275.212)
 mesh = SubResource("TextMesh_ntxfx")
 
+[node name="Thaiana" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(572.675, 331.041)
+scale = Vector2(275.124, -362.022)
+mesh = SubResource("TextMesh_q1r0n")
+
+[node name="Maeline" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(572.211, 329.407)
+scale = Vector2(296.717, -360.452)
+mesh = SubResource("TextMesh_sptri")
+
 [node name="Button" type="Button" parent="."]
 visible = false
 offset_right = 1156.0
 offset_bottom = 647.0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-visible = false
-position = Vector2(585.208, 298.214)
-scale = Vector2(2420.92, -5312.98)
-mesh = SubResource("TextMesh_thgmg")
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+mesh = SubResource("TextMesh_j0d2j")
 
 [connection signal="pressed" from="REWATCH" to="Button" method="set_visible" binds= [true]]
 [connection signal="pressed" from="REWATCH" to="Button" method="set_disabled" binds= [false]]
-[connection signal="pressed" from="REWATCH" to="MeshInstance2D" method="set_visible" binds= [true]]
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_visible" binds= [false]]
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="CREDIT" to="PLAY NORMAL MODE" method="set_visible" binds= [false]]
@@ -277,6 +306,7 @@ mesh = SubResource("TextMesh_thgmg")
 [connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="THAIANA_CREDIT_BUTTON" to="Thaiana" method="set_visible" binds= [true]]
 [connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="Multi credit text" method="set_visible" binds= [false]]
 [connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="OLIVIER_LAFLAMME_CREDIT_BUTTON" method="set_disabled" binds= [true]]
@@ -288,6 +318,7 @@ mesh = SubResource("TextMesh_thgmg")
 [connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="THAIANA_CREDIT_BUTTON" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_visible" binds= [false]]
 [connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="MAELINE_CREDIT_BUTTON" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="MAELINE_CREDIT_BUTTON" to="Maeline" method="set_visible" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="PLAY STORY MODE" method="set_visible" binds= [true]]
 [connection signal="pressed" from="<--BACK" to="PLAY STORY MODE" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="PLAY NORMAL MODE" method="set_visible" binds= [true]]
@@ -314,6 +345,7 @@ mesh = SubResource("TextMesh_thgmg")
 [connection signal="pressed" from="<--BACK" to="olivier" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="Aude" method="set_visible" binds= [false]]
 [connection signal="pressed" from="<--BACK" to="RAPAHEL" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="Thaiana" method="set_visible" binds= [false]]
+[connection signal="pressed" from="<--BACK" to="Maeline" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button" to="Button" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="Button" to="MeshInstance2D" method="set_visible" binds= [false]]
