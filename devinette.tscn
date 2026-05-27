@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bmx5qfxkr58q3"]
+
+[node name="devinette" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 170.0
+offset_bottom = 137.0
+text = "(:_:)on peut le faire"
