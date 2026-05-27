@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://wvsxsfvkliji"]
+[gd_scene load_steps=2 format=3 uid="uid://wvsxsfvkliji"]
+
+[ext_resource type="Texture2D" uid="uid://c4bte0237ssim" path="res://Screenshot 2026-05-27 191539.png" id="1_ls4wc"]
 
 [node name="niveau 1" type="Node2D"]
 position = Vector2(-12, 22)
@@ -28,6 +30,14 @@ offset_bottom = 336.0
 disabled = true
 text = "ok,comme tu veux."
 
+[node name="Button4" type="Button" parent="."]
+visible = false
+offset_left = 371.0
+offset_top = 92.0
+offset_right = 703.0
+offset_bottom = 417.0
+icon = ExtResource("1_ls4wc")
+
 [connection signal="pressed" from="Button" to="Button" method="set_disabled"]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button" to="Button2" method="set_visible" binds= [true]]
@@ -38,3 +48,4 @@ text = "ok,comme tu veux."
 [connection signal="pressed" from="Button2" to="Button3" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="Button3" to="Button3" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button3" to="Button3" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="Button3" to="Button4" method="set_visible" binds= [true]]
