@@ -30,7 +30,7 @@ offset_bottom = 336.0
 disabled = true
 text = "ok,comme tu veux."
 
-[node name="Button4" type="Button" parent="."]
+[node name="image" type="Button" parent="."]
 visible = false
 offset_left = 371.0
 offset_top = 92.0
@@ -48,4 +48,4 @@ icon = ExtResource("1_ls4wc")
 [connection signal="pressed" from="Button2" to="Button3" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="Button3" to="Button3" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Button3" to="Button3" method="set_disabled" binds= [true]]
-[connection signal="pressed" from="Button3" to="Button4" method="set_visible" binds= [true]]
+[connection signal="pressed" from="Button3" to="image" method="set_visible" binds= [true]]
