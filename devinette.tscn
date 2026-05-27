@@ -3,6 +3,15 @@
 [node name="devinette" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-offset_right = 170.0
-offset_bottom = 137.0
-text = "(:_:)on peut le faire"
+offset_left = 4.0
+offset_top = 417.0
+offset_right = 270.0
+offset_bottom = 554.0
+text = "NICE"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 839.0
+offset_top = 416.0
+offset_right = 1102.0
+offset_bottom = 553.0
+text = "Nike"
