@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk0dbhehdbnvh"]
+[gd_scene load_steps=10 format=3 uid="uid://bk0dbhehdbnvh"]
 
 [ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
+[ext_resource type="Script" path="res://PLAY NORMAL MODE.gd" id="2_qyusj"]
 
 [sub_resource type="TextMesh" id="TextMesh_tnb5y"]
 text = "CREDIT TO :
@@ -94,6 +95,7 @@ offset_right = 1152.0
 offset_bottom = 645.0
 action_mode = 0
 text = "Jeu libre"
+script = ExtResource("2_qyusj")
 metadata/_edit_use_anchors_ = true
 
 [node name="SETTING" type="Button" parent="." groups=["normal setting ui button"]]
@@ -230,6 +232,8 @@ offset_right = 1156.0
 offset_bottom = 647.0
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(8, 9.00003)
+scale = Vector2(3330.61, -4766.67)
 mesh = SubResource("TextMesh_j0d2j")
 
 [connection signal="pressed" from="REWATCH" to="Button" method="set_visible" binds= [true]]
