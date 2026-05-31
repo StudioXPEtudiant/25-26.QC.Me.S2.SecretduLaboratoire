@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://wvsxsfvkliji"]
+[gd_scene load_steps=8 format=3 uid="uid://wvsxsfvkliji"]
 
-[ext_resource type="Texture2D" uid="uid://b0aixviempeed" path="res://cannon PACHINGO FONCTIONNEL¸.pgn.png" id="2_2if6x"]
+[ext_resource type="Texture2D" uid="uid://cy00vm0f6mv83" path="res://cannon - Copie.png" id="2_11oim"]
 [ext_resource type="Script" path="res://Node2D.gd" id="2_ee174"]
+[ext_resource type="Texture2D" uid="uid://c4bte0237ssim" path="res://Screenshot 2026-05-27 191539.png" id="3_evlyv"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ycss3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gehmj"]
+blend_mode = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_1apf6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6k5ea"]
 
 [node name="niveau 1" type="Node2D"]
 position = Vector2(-12, 22)
@@ -13,15 +23,42 @@ offset_right = 833.0
 offset_bottom = 437.0
 text = "pachingo"
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(550, 487.821)
+scale = Vector2(100.114, 102.358)
+mesh = SubResource("SphereMesh_ycss3")
+
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(551, 575.5)
+position = Vector2(551, 479.5)
 rotation = -1.5708
 script = ExtResource("2_ee174")
 
 [node name="CannonPachingoFonctionnel¸_pgn" type="Sprite2D" parent="Node2D"]
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_2if6x")
+texture = ExtResource("2_11oim")
+
+[node name="Screenshot2026-05-27191539" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(588, 302)
+scale = Vector2(3.55556, 2.04416)
+texture = ExtResource("3_evlyv")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Screenshot2026-05-27191539"]
+visible = false
+material = SubResource("CanvasItemMaterial_gehmj")
+use_parent_material = true
+position = Vector2(-6.43361, 173.665)
+scale = Vector2(106.805, 126.947)
+mesh = SubResource("BoxMesh_1apf6")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.411765, 0.592157, 0.815686, 1)
+show_behind_parent = true
+position = Vector2(589.5, 300.875)
+scale = Vector2(1155, 451.75)
+mesh = SubResource("QuadMesh_6k5ea")
 
 [connection signal="pressed" from="Button" to="Button" method="set_disabled"]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
