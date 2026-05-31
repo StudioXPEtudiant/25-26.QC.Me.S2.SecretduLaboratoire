@@ -7,11 +7,12 @@ var cannonposition:float = 0.0
 var anglederotation:float
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
-	cursoposition = get_local_mouse_position()
+	cursoposition = get_global_mouse_position()
 	cursorposition = cursoposition.x
 	cursopposition = cursoposition.y
-	rotate_toward(cursopposition,cursorposition,cannonposition) 
+	look_at(cursoposition)
 	anglederotation = (rotate_toward(cursorposition,cursopposition,cannonposition))
+	 
 #551
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -236,6 +236,9 @@ position = Vector2(8, 9.00003)
 scale = Vector2(3330.61, -4766.67)
 mesh = SubResource("TextMesh_j0d2j")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
 [connection signal="pressed" from="REWATCH" to="Button" method="set_visible" binds= [true]]
 [connection signal="pressed" from="REWATCH" to="Button" method="set_disabled" binds= [false]]
 [connection signal="pressed" from="CREDIT" to="PLAY STORY MODE" method="set_visible" binds= [false]]

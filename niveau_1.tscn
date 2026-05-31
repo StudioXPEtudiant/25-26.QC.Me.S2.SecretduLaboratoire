@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wvsxsfvkliji"]
 
-[ext_resource type="Texture2D" uid="uid://c4bte0237ssim" path="res://Screenshot 2026-05-27 191539.png" id="1_ls4wc"]
+[ext_resource type="Texture2D" uid="uid://b0aixviempeed" path="res://cannon PACHINGO FONCTIONNEL¸.pgn.png" id="2_2if6x"]
 [ext_resource type="Script" path="res://Node2D.gd" id="2_ee174"]
 
 [node name="niveau 1" type="Node2D"]
@@ -13,15 +13,16 @@ offset_right = 833.0
 offset_bottom = 437.0
 text = "pachingo"
 
-[node name="Cannon" type="Sprite2D" parent="."]
-position = Vector2(551, 467.5)
-texture = ExtResource("1_ls4wc")
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(551, 575.5)
+rotation = -1.5708
 script = ExtResource("2_ee174")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(551, 467.5)
+[node name="CannonPachingoFonctionnel¸_pgn" type="Sprite2D" parent="Node2D"]
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2if6x")
 
 [connection signal="pressed" from="Button" to="Button" method="set_disabled"]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
-[connection signal="ready" from="Cannon" to="Cannon" method="_on_ready"]
 [connection signal="ready" from="Node2D" to="Node2D" method="_ready"]

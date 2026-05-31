@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4bte0237ssim"
-path="res://.godot/imported/Screenshot 2026-05-27 191539.png-d193158aaecb2ef723690f03d660aaad.ctex"
+uid="uid://b0aixviempeed"
+path="res://.godot/imported/cannon PACHINGO FONCTIONNEL¸.pgn.png-035995e1efce0f79b3e7bd3056dc34b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screenshot 2026-05-27 191539.png"
-dest_files=["res://.godot/imported/Screenshot 2026-05-27 191539.png-d193158aaecb2ef723690f03d660aaad.ctex"]
+source_file="res://cannon PACHINGO FONCTIONNEL¸.pgn.png"
+dest_files=["res://.godot/imported/cannon PACHINGO FONCTIONNEL¸.pgn.png-035995e1efce0f79b3e7bd3056dc34b4.ctex"]
 
 [params]
 
@@ -24,7 +24,7 @@ compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
-roughness/src_normal="res://.godot/imported/cannon PACHINGO FONCTIONNEL¸.pgn.png"
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
