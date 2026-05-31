@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://wvsxsfvkliji"]
 
 [ext_resource type="Texture2D" uid="uid://c4bte0237ssim" path="res://Screenshot 2026-05-27 191539.png" id="1_ls4wc"]
-[ext_resource type="Script" path="res://Node2D.gd" id="2_ee174"]
+[ext_resource type="Script" path="res://cannon.gd" id="2_afq30"]
 
 [node name="niveau 1" type="Node2D"]
 position = Vector2(-12, 22)
@@ -14,14 +14,11 @@ offset_bottom = 437.0
 text = "pachingo"
 
 [node name="Cannon" type="Sprite2D" parent="."]
-position = Vector2(551, 467.5)
+position = Vector2(12, 108)
 texture = ExtResource("1_ls4wc")
-script = ExtResource("2_ee174")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(551, 467.5)
+script = ExtResource("2_afq30")
 
 [connection signal="pressed" from="Button" to="Button" method="set_disabled"]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
+[connection signal="frame_changed" from="Cannon" to="Cannon" method="_on_frame_changed"]
 [connection signal="ready" from="Cannon" to="Cannon" method="_on_ready"]
-[connection signal="ready" from="Node2D" to="Node2D" method="_ready"]
