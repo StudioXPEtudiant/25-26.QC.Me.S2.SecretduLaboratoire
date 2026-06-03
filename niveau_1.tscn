@@ -124,7 +124,7 @@ offset_right = 867.0
 offset_bottom = 502.0
 script = ExtResource("5_0ok1x")
 
-[node name="Bouletdecannon" type="MeshInstance2D" parent="."]
+[node name="Bouletdecanon" type="MeshInstance2D" parent="."]
 visible = false
 modulate = Color(0, 1, 1, 1)
 self_modulate = Color(0.47788, 0.47788, 0.47788, 1)
