@@ -113,7 +113,7 @@ offset_top = 268.0
 offset_right = 776.0
 offset_bottom = 366.0
 action_mode = 0
-text = "Quitte immédiatement!"
+text = "Quitter"
 metadata/_edit_use_anchors_ = true
 
 [node name="REWATCH" type="Button" parent="." groups=["normal setting ui button"]]

@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://wvsxsfvkliji"]
+[gd_scene load_steps=16 format=3 uid="uid://wvsxsfvkliji"]
 
+[ext_resource type="Script" path="res://niveau_1.gd" id="1_cnvyj"]
 [ext_resource type="Texture2D" uid="uid://cy00vm0f6mv83" path="res://cannon - Copie.png" id="2_11oim"]
 [ext_resource type="Script" path="res://Node2D.gd" id="2_ee174"]
 [ext_resource type="Texture2D" uid="uid://c4bte0237ssim" path="res://Screenshot 2026-05-27 191539.png" id="3_evlyv"]
+[ext_resource type="Script" path="res://label.gd" id="4_1yi3h"]
+[ext_resource type="Script" path="res://bouton retry.gd" id="5_0ok1x"]
+[ext_resource type="Script" path="res://Boulet de cannon.gd" id="7_e8e2i"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ycss3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqj6x"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gehmj"]
 blend_mode = 1
@@ -13,8 +19,17 @@ blend_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_6k5ea"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_8ap6u"]
+
+[sub_resource type="TextMesh" id="TextMesh_wqdlq"]
+text = "TU AS PERDU!
+REJOUER?"
+
+[sub_resource type="BoxMesh" id="BoxMesh_yb5ev"]
+
 [node name="niveau 1" type="Node2D"]
 position = Vector2(-12, 22)
+script = ExtResource("1_cnvyj")
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -24,29 +39,43 @@ offset_right = 833.0
 offset_bottom = 437.0
 text = "pachingo"
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0, 1, 1, 1)
+[node name="cannonentier" type="Node2D" parent="."]
 position = Vector2(550, 487.821)
 scale = Vector2(100.114, 102.358)
+
+[node name="cercleducannon" type="Node2D" parent="cannonentier"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="cannonentier/cercleducannon"]
+modulate = Color(0, 1, 1, 1)
 mesh = SubResource("SphereMesh_ycss3")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(551, 479.5)
+[node name="cannon" type="Node2D" parent="cannonentier"]
+position = Vector2(0, -0.0861778)
 rotation = -1.5708
+scale = Vector2(0.00976963, 0.00998861)
 script = ExtResource("2_ee174")
 
-[node name="CannonPachingoFonctionnel¸_pgn" type="Sprite2D" parent="Node2D"]
+[node name="CannonPachingoFonctionnel¸_pgn" type="Sprite2D" parent="cannonentier/cannon"]
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_11oim")
 
-[node name="Screenshot2026-05-27191539" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(588, 302)
+[node name="zonecanon" type="MeshInstance2D" parent="cannonentier/cannon" groups=["zone_canon"]]
+position = Vector2(50.5496, 0.773)
+rotation = 1.5708
+scale = Vector2(47.435, 1.034)
+mesh = SubResource("QuadMesh_kqj6x")
+
+[node name="background" type="Node2D" parent="."]
+position = Vector2(12, -22)
+
+[node name="Screenshot2026-05-27191539" type="Sprite2D" parent="background"]
+z_index = -1
+position = Vector2(576, 324)
 scale = Vector2(3.55556, 2.04416)
 texture = ExtResource("3_evlyv")
 
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="Screenshot2026-05-27191539"]
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="background/Screenshot2026-05-27191539"]
 visible = false
 material = SubResource("CanvasItemMaterial_gehmj")
 use_parent_material = true
@@ -54,13 +83,63 @@ position = Vector2(-6.43361, 173.665)
 scale = Vector2(106.805, 126.947)
 mesh = SubResource("BoxMesh_1apf6")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="background"]
 modulate = Color(0.411765, 0.592157, 0.815686, 1)
-show_behind_parent = true
-position = Vector2(589.5, 300.875)
+z_index = -1
+position = Vector2(577.5, 322.875)
 scale = Vector2(1155, 451.75)
 mesh = SubResource("QuadMesh_6k5ea")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+top_level = true
+offset_left = 1041.0
+offset_top = 1.0
+offset_right = 1081.0
+offset_bottom = 24.0
+script = ExtResource("4_1yi3h")
+
+[node name="GAME OVER" type="Node2D" parent="."]
+visible = false
+
+[node name="arrière plan noir" type="MeshInstance2D" parent="GAME OVER"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(598, 317)
+scale = Vector2(1280.75, 715.25)
+mesh = SubResource("QuadMesh_8ap6u")
+
+[node name="écran game over" type="MeshInstance2D" parent="GAME OVER"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(551, 219)
+scale = Vector2(799.586, -1257.79)
+mesh = SubResource("TextMesh_wqdlq")
+
+[node name="bouton retry" type="Button" parent="GAME OVER"]
+offset_left = 241.0
+offset_top = 254.0
+offset_right = 867.0
+offset_bottom = 502.0
+script = ExtResource("5_0ok1x")
+
+[node name="Bouletdecannon" type="MeshInstance2D" parent="."]
+visible = false
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.47788, 0.47788, 0.47788, 1)
+position = Vector2(550.5, 428.327)
+scale = Vector2(41, 56.6531)
+mesh = SubResource("BoxMesh_yb5ev")
+script = ExtResource("7_e8e2i")
+
 [connection signal="pressed" from="Button" to="Button" method="set_disabled"]
 [connection signal="pressed" from="Button" to="Button" method="set_visible" binds= [false]]
-[connection signal="ready" from="Node2D" to="Node2D" method="_ready"]
+[connection signal="ready" from="cannonentier/cannon" to="cannonentier/cannon" method="_ready"]
+[connection signal="timeout" from="Timer" to="Label" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="start" binds= [1.0]]
+[connection signal="hidden" from="Label" to="Timer" method="stop"]
+[connection signal="hidden" from="Label" to="Timer" method="set_wait_time" binds= [100.0]]
+[connection signal="hidden" from="Label" to="Timer" method="set_paused" binds= [true]]
+[connection signal="hidden" from="Label" to="GAME OVER" method="set_visible" binds= [true]]
+[connection signal="pressed" from="GAME OVER/bouton retry" to="GAME OVER/bouton retry" method="_restart"]
