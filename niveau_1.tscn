@@ -139,7 +139,7 @@ script = ExtResource("7_e8e2i")
 [connection signal="timeout" from="Timer" to="Label" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Timer" method="start" binds= [1.0]]
 [connection signal="hidden" from="Label" to="Timer" method="stop"]
-[connection signal="hidden" from="Label" to="Timer" method="set_paused" binds= [true]]
 [connection signal="hidden" from="Label" to="Timer" method="set_wait_time" binds= [100.0]]
+[connection signal="hidden" from="Label" to="Timer" method="set_paused" binds= [true]]
 [connection signal="hidden" from="Label" to="GAME OVER" method="set_visible" binds= [true]]
 [connection signal="pressed" from="GAME OVER/bouton retry" to="GAME OVER/bouton retry" method="_restart"]

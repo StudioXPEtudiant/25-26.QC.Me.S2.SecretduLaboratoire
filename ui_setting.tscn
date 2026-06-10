@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk0dbhehdbnvh"]
+[gd_scene load_steps=11 format=3 uid="uid://bk0dbhehdbnvh"]
 
 [ext_resource type="Script" path="res://PLAY STORY MODE.gd" id="1_lv2l4"]
 [ext_resource type="Script" path="res://PLAY NORMAL MODE.gd" id="2_qyusj"]
+[ext_resource type="Script" path="res://Quitter.gd" id="3_5o5yc"]
 
 [sub_resource type="TextMesh" id="TextMesh_tnb5y"]
 text = "CREDIT TO :
@@ -114,6 +115,7 @@ offset_right = 776.0
 offset_bottom = 366.0
 action_mode = 0
 text = "Quitter"
+script = ExtResource("3_5o5yc")
 metadata/_edit_use_anchors_ = true
 
 [node name="REWATCH" type="Button" parent="." groups=["normal setting ui button"]]
